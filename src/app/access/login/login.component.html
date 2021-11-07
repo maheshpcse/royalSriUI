@@ -1,1 +1,32 @@
-<p>login works!</p>
+<div class="login-wrapper">
+    <div class="login-left">
+        <div class="login-container">
+            <div class="logo-image">
+                <img src="assets/images/logo.svg" alt="">
+            </div>
+            <div class="logo-info">
+                <div class="logo-title">
+                    Sign In
+                </div>
+                <div class="logo-input-data">
+                    <div class="form-group">
+                        <label for="">Username</label>
+                        <input type="text" class="form-control error" placeholder="Enter Username">
+                        <span class="error-text">Incorrect Username</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password">
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-login" [routerLink]="[ '/admin']">
+                    Sign In
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="login-right">
+        <img src="assets/images/logo-bg.svg" alt="">
+    </div>
+
+</div>

@@ -1,0 +1,109 @@
+a
+    &:focus
+        outline none
+
+button
+    &:focus
+        outline none
+
+.no-data
+    display flex
+    align-items center
+    justify-content center
+    .no-data-info
+        text-align center
+        .no-data-icon
+            height 80px
+            width @height
+            line-height @height
+            border-radius 50%
+            margin auto
+            background gray-light
+            text-align center
+            font-size 40px
+            color #b8b8b8
+            margin-bottom 5px
+        .no-data-text
+            font-size 14px
+            color gray
+            font-weight 600
+
+.ScrollTop
+    position fixed
+    bottom 60px
+    right 15px
+    cursor pointer
+    background theme
+    color #ffffff
+    width 43px
+    height 43px
+    border-radius 25px
+    display none
+    z-index 8
+    overflow hidden
+    transform translate3d(0,0,0)
+    padding initial
+    line-height initial
+    text-align center
+
+
+for i in range(1px, 10000px, 1)
+  .mt-{i}
+    margin-top i !important
+  .mb-{i}
+    margin-bottom i !important
+  .ml-{i}
+    margin-left i !important
+  .mr-{i}
+    margin-right i !important
+  .padding-{i}
+    padding i !important
+  .pt-{i}
+    padding-top i !important
+  .pb-{i}
+    padding-bottom i !important
+  .height-{i}
+    height i
+  .width-{i}
+    width i !important
+
+
+.back-to-top
+    z-index 99
+    position fixed
+    bottom 30px
+    right 30px
+    width 33px
+    height 33px
+    line-height 33px
+    display none
+    color #3c4858
+    background-color #ced4da
+    -webkit-transition all 0.5s ease
+    transition all 0.5s ease
+    -webkit-box-shadow 0 0 3px rgba(60, 72, 88, 0.15)
+    box-shadow 0 0 3px rgba(60, 72, 88, 0.15)
+    i
+        font-size 16px
+        -webkit-transition all 0.5s ease
+        transition all 0.5s ease
+    &:hover
+        background-color #2f55d4
+        color #ffffff
+        -webkit-transform rotate(45deg)
+        transform rotate(45deg)
+        i
+            -webkit-transform rotate(-45deg)
+            transform rotate(-45deg)
+
+.page-wrapper
+    display flex
+    width 100%
+    height auto
+    min-height 100%
+    background main-bg
+    .main-content
+        width calc(100% - 345px)
+        margin-left 345px
+        padding-top 0px !important
+        padding 36px 23px

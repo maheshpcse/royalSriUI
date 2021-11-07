@@ -1,0 +1,21 @@
+
+@-webkit-keyframes updown
+  0%
+    transform translateY(3px)
+  50%
+    transform translateY(-3px)
+  100%
+    transform translateY(3px)
+
+.animate-updown
+    animation updown 2s ease-in-out infinite
+
+@keyframes eyeBlink
+  0%, 100%
+      transform scale(1, .05)
+  5%,
+  95%
+      transform scale(1, 1)
+
+.animate-eyeblink
+  animation eyeBlink 3s infinite

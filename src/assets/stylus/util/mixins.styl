@@ -1,0 +1,64 @@
+/*
+* Clearfix using psuedo elements.
+*/
+clearfix()
+  &:after
+    content ""
+    display table
+    clear both
+
+/*
+* Border Radius
+*/
+border-radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+
+/*
+* Media Query for mobile : max-width 480px
+*/
+mobileMin()
+  @media (min-width: 481px)
+    {block}
+
+mobile()
+  @media (max-width: 480px)
+    {block}
+
+/*
+* Media Query for tab : max-width 767px
+*/
+tabMin()
+  @media (min-width: 768px)
+    {block}
+tab()
+  @media (max-width: 768px)
+    {block}
+
+/*
+* Media Query for pad : max-width 900px
+*/
+padMin()
+  @media (min-width: 991px)
+    {block}
+
+pad()
+  @media (max-width: 990px)
+    {block}
+
+/*
+* Media Query for tab : max-width 480px
+*/
+media(var)
+  condition = '(max-width: %s)' % var
+  @media condition
+    {block}
+/*
+* Media Query for tab : max-width 480px
+*/
+mediaMin(var)
+  condition = '(min-width: %s)' % var
+  @media condition
+    {block}
+/** END HERE **/

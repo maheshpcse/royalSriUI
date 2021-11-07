@@ -1,0 +1,33 @@
+.section-heading
+    color #3b566e
+    font-size 30px
+    font-weight 500
+    margin-bottom 30px
+    padding-bottom 20px
+    position relative
+    &.center
+        text-align center
+        &:before
+            left calc(50% - 25px)
+        +mobile()
+            padding-bottom 15px
+            margin-bottom 20px
+    &.purple
+        &:before
+            border-bottom-color #6667B9
+
+
+.section-header
+    text-align center
+    margin-bottom 30px
+    .section-heading
+        margin-bottom 15px
+    p
+        color #6f8ba4
+        font-size 20px
+    +mobile()
+        .section-heading
+            font-size 18px
+        p
+            font-size 14px
+    

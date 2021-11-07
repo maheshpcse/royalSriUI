@@ -1,0 +1,119 @@
+.card
+    background white
+    border-radius 15px
+    margin-bottom 24px
+    box-shadow none
+    border none
+    .card-body
+        padding 0px 26px
+    .card-inner
+        padding 32px 24px
+        .card-header
+            border none
+            padding 0px
+            display flex
+            align-items center
+            margin-bottom 0px
+            background none
+            .card-title
+                font-size 20px
+                font-weight 600
+                
+.content-set
+    display flex
+    align-items center
+    margin-bottom 0px
+    border-bottom 1px solid 
+    border-color gray
+    padding 32px 24px
+    .content-icon
+        width 83px
+        height @width
+        line-height @width
+        margin-right 24px
+        background #e6fef4
+        border-radius 50%
+        color sucess
+        font-size 24px
+        text-align center
+        &.cash
+            background #e6fef4
+            color #06c270
+        &.credit
+            background #fff0f0
+            color #ff3b3b
+        &.purchase
+            background #faf0f6
+            color #872c63
+        &.sales
+            background #ecf5f9
+            color #2c6c87
+    .content-info
+        width calc(100% - 107px)
+        .content-title
+            font-size 24px
+            color gray
+            line-height normal
+        .content-main
+            font-size 28px
+            font-weight 700
+            line-height normal
+            i
+                margin-right 5px
+                font-size 24px
+                font-weight 700
+    &:last-child
+        border-bottom none
+
+.inventory-list
+    ul
+        padding 0px
+        margin 0px
+        list-style none
+        li
+            display flex
+            align-items center
+            margin-bottom 30px
+            .list-icon
+                height 83px
+                width @height
+                line-height @height
+                text-align center
+                font-size 16px
+                color info
+                font-weight 600
+                margin-right 41px
+                background #f0f6ff
+                border-radius 50%
+                &.start
+                    visibility hidden
+            .list-content
+                width calc(100% - 124px)
+                display flex
+                align-items center
+            .list-title-first
+                font-size 24px
+                color gray
+                line-height normal
+                font-weight 500
+                padding 20px
+                text-align center
+                width 204px
+            .list-title
+                color text-color
+                font-size 28px
+                font-weight 700
+                border-right 1px
+                text-align center
+                padding 20px
+                width 204px
+            &:first-child
+                margin-bottom 0px
+            &:last-child
+                border-bottom 0px
+                margin-bottom 0px
+.title-text
+    font-size 14px
+    color text-color
+    padding 36px 0px
+    font-weight 600

@@ -1,0 +1,70 @@
+.side-nav
+    background secondary
+    width 345px
+    display block
+    position relative
+    height auto
+    min-height 100%
+    position fixed
+    .side-nav-inner
+        .side-nav-logo
+            height 132px
+            width 100%
+            display flex
+            .logo-inner
+                width 200px
+                height 48px
+                margin auto
+                img
+                    height 100%
+                    width 100%
+                    object-fit cover
+        .side-nav-area
+            height calc(100% - 132px)
+            ul
+                padding 0px
+                margin 0px
+                list-style none
+                li
+                    padding-left 50px !important
+                    padding 20px
+                    display flex
+                    align-items center
+                    min-height 60px
+                    color gray
+                    background transparent
+                    border-left-width 6px
+                    border-left-style solid
+                    border-color transparent
+                    transition 0.3s all ease
+                    cursor pointer
+                    .icon
+                        font-size 16px
+                        margin-right 12px
+                    .text
+                        font-size 16px
+                        line-height normal
+                    &.active, &:hover
+                        background #c9a51412
+                        border-left-width 6px
+                        border-left-style solid
+                        border-color #c9a514
+                        color white
+                        font-weight 500
+                        .icon
+                            i
+                                font-weight 900
+                    &:hover
+                        .icon
+                            i
+                                font-weight 400
+.log-out
+    position absolute
+    left 10%
+    bottom 50px
+    a
+        color white !important
+        cursor pointer
+        font-size 16px
+        i
+            margin-right 5px

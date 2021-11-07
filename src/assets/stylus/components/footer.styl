@@ -1,0 +1,200 @@
+.site-footer
+    background #e1effa
+    position relative
+    font-size 16px
+    .outer-box
+        position relative
+        padding 80px 0px 30px
+        &:before
+            content ''
+            position absolute
+            left 0
+            top 0px
+            width 100%
+            height 100%
+            z-index 1
+        &:after
+            content ''
+            position absolute
+            top 0px
+            right 100%
+            margin-right -105px
+            width 3000px
+            height 100%
+            background white
+        .footer-column
+            position relative
+            z-index 5
+            img
+                max-width 240px
+        .footer-widget
+            margin-bottom 20px
+            &:last-child
+                margin-bottom 0px
+            .widget-title
+                position relative
+                font-size 20px
+                font-weight 600
+                text-transform capitalize
+                color #3b566e
+                line-height normal
+                padding-bottom 10px
+                margin-bottom 15px
+                &:before
+                    content ''
+                    position absolute
+                    left 0px
+                    bottom 0px
+                    width 30px
+                    border-bottom 2px solid theme
+            .textwidget
+                max-width 360px
+                +mobile()
+                    p
+                        font-size 14px
+            ul.menu
+                list-style none 
+                margin 0px
+                padding 0px
+                li
+                    display inline-block
+                    width 49%
+                    vertical-align top
+                    margin-bottom 5px 
+                    font-size 14px                   
+                    a
+                        color #3b566e
+                        text-decoration none
+                        &:hover
+                            color theme-dark
+        .footer-column-contact
+            .footer-widget
+                margin-bottom 20px
+                position relative
+                .widget-title
+                    position relative
+                    font-size 20px
+                    font-weight 600
+                    text-transform capitalize
+                    color #3b566e
+                    line-height normal
+                    padding-bottom 10px
+                    margin-bottom 15px
+                    &:before
+                        content ''
+                        position absolute
+                        left 0px
+                        bottom 0px
+                        width 30px
+                        border-bottom 2px solid theme
+                .phone-link, .email-link
+                    padding-left 50px
+                    color #423b3b
+                    font-size 20px
+                    line-height normal
+                    text-decoration none
+                    &:before
+                        content "\f095"
+                        display block
+                        position absolute
+                        left 0px
+                        color #e1effa
+                        font-family "Font Awesome 5 Pro"
+                        font-weight 400
+                        font-size 1.5rem
+                        top 3px
+                        line-height normal
+                        background theme
+                        width 45px
+                        height 45px
+                        margin-right 5px
+                        text-align center
+                        line-height 45px
+                        border-radius 25px
+                    &:hover
+                        color theme-dark                           
+                .email-link
+                    &:before
+                        content "\f0e0"
+                .alignleft
+                    margin-left -4px
+        .copyright
+            font-size 12px
+            color #636363
+            white-space nowrap
+            a
+                color #636363
+    +mobile()
+        background #fff
+        .outer-box
+            padding 25px 0px 10px
+            &:before
+                display none
+            &:after
+                display none
+            .footer-column
+                .footer-widget
+                    &:last-child
+                        margin-bottom 10px
+                    ul
+                        &.menu
+                            li
+                                width 45%
+                .footer-column-contact
+                    padding-left 0px
+                    padding-right 0px
+.footer-contact
+    .footer-phone, .footer-email
+        margin-bottom 10px
+        display flex
+        align-items center
+        .icon
+            height 35px
+            width @height
+            border-radius 50%
+            background #fff
+            margin-right 10px
+            text-align center
+            line-height @height
+            font-size 13px
+            font-weight 800
+            color #3b566e
+            &:before
+                content "\f095"
+                font-family "Font Awesome 5 Pro"
+                font-weight 400      
+            +mobile()
+                color #479aff
+                border 1px #479aff solid
+        .text
+            width calc(100% - 40px)
+            a
+                color #3b566e
+    .footer-email
+        .icon
+            &:before
+                content "\f0e0"
+            +mobile()
+                color #479aff
+                border 1px #479aff solid
+.back-to-top
+    z-index 99
+    position fixed
+    bottom 30px
+    right 30px
+    width 40px
+    height 40px
+    line-height 40px
+    font-size 18px
+    text-align center
+    display none
+    color white
+    border-radius 6px
+    background-color #a3a3a3
+    transition all 0.5s ease
+    box-shadow 0 0 3px rgba(60, 72, 88, 0.15)
+    &:hover
+        background theme-dark
+        color white
+    
+

@@ -25,6 +25,11 @@ import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.co
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { UserSettingsComponent } from './user/user-settings/user-settings.component';
+import { OrdersComponent } from './orders/orders.component';
+import { InvoicesComponent } from './invoices/invoices.component';
+import { UsersComponent } from './users/users.component';
+import { ReportsComponent } from './reports/reports.component';
+import { OrgComponent } from './org/org.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +46,11 @@ import { UserSettingsComponent } from './user/user-settings/user-settings.compon
     UserProfileComponent,
     UserDashboardComponent,
     UserSettingsComponent,
+    OrdersComponent,
+    InvoicesComponent,
+    UsersComponent,
+    ReportsComponent,
+    OrgComponent,
   ],
   imports: [
     BrowserModule,
