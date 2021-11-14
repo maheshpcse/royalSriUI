@@ -2,12 +2,190 @@
     <app-side-nav></app-side-nav>
         <div class="main-content">
             <app-header></app-header>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title-text">
+            <div class="page-header">
+                <div class="page-heading">
+                    <div class="page-title">
                         Orders
                     </div>
                 </div>
-            </div>  
+                <div class="page-options">
+                    <div class="search-box">
+                        <span class="icon"><i class="far fa-search"></i></span>
+                        <input type="text" class="search-input" placeholder="Search Orders">
+                    </div>
+                    <div class="date-box">
+                        <p-calendar [(ngModel)]="value" [showIcon]="true"></p-calendar>
+                    </div>
+                    <div class="button-box">
+                        <button class="btn btn-create" data-toggle="modal" data-target="#createOrder"><i class="fas fa-plus-square"></i> Create</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination-block">
+                <div class="page-list">
+                    1 - 50 of 243
+                </div>
+                <div class="page-icons">
+                    <button class="btn btn-icon-only"><i class="far fa-chevron-left"></i></button>
+                    <button class="btn btn-icon-only"><i class="far fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-scrolled">
+                    <thead>
+                        <tr>
+                            <th>
+                                Order No.
+                            </th>
+                            <th>
+                                Manufacturing Plant
+                            </th>
+                            <th>
+                                Order Date
+                            </th>
+                            <th>
+                                Del. Challan
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of orderList">
+                            <td>
+                                {{item.orderNo}}
+                            </td>
+                            <td>
+                                {{item.manufac}}
+                            </td>
+                            <td>
+                                {{item.orderDate}}
+                            </td>
+                            <td>
+                                {{item.challan}}
+                            </td>
+                            <td>
+                                <span class="badge badge-pending" *ngIf="item.status == 1">
+                                    Pending
+                                </span>
+                                <span class="badge badge-accepted" *ngIf="item.status == 2">
+                                    Accepted
+                                </span>
+                                <span class="badge badge-completed" *ngIf="item.status == 3">
+                                    Completed
+                                </span>
+                                <span class="badge badge-rejected" *ngIf="item.status == 4">
+                                    Rejected
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+
+            </div>
+
         </div>
 </div>
+
+
+
+<div class="modal fade custom-modal" id="createOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-back">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="far fa-arrow-left"></i></span>
+                </button>      
+            </div>
+            <h5 class="modal-title" id="exampleModalLabel">Create Order</h5>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="">Select Manufacturing Unit</label>
+                        <div class="org-dropdown for-modal">
+                            <div class="dropdown">
+                                <button class="btn btn-org dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="icon"><i class="far fa-briefcase"></i></span> <span class="text">Select Organization</span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Royal Water Pvt. LTd.</a>
+                                    <a class="dropdown-item" href="#">Royal Iron Pvt. LTd.</a>
+                                    <a class="dropdown-item" href="#">Royal Pvt. LTd.</a>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Product</label>
+                        <input type="text" class="form-control form-sm" value="250 ml" disabled>
+                    </div>
+                </div>    
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="">Enter Quantity</label>
+                        <input type="text" class="form-control form-sm" placeholder="Enter"> 
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Product</label>
+                        <input type="text" class="form-control form-sm" value="500 ml" disabled>
+                    </div>
+                </div>    
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="">Enter Quantity</label>
+                        <input type="text" class="form-control form-sm" placeholder="Enter"> 
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Product</label>
+                        <input type="text" class="form-control form-sm" value="1 Ltr" disabled>
+                    </div>
+                </div>    
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="">Enter Quantity</label>
+                        <input type="text" class="form-control form-sm" placeholder="Enter"> 
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Product</label>
+                        <input type="text" class="form-control form-sm" value="2 Ltr" disabled>
+                    </div>
+                </div>    
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="">Enter Quantity</label>
+                        <input type="text" class="form-control form-sm" placeholder="Enter"> 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-submit">
+                <button class="btn btn-submit" data-dismiss="modal" >Submit</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

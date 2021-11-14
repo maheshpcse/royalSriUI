@@ -2,12 +2,277 @@
     <app-side-nav></app-side-nav>
         <div class="main-content">
             <app-header></app-header>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title-text">
-                        Invoices
+            
+            <ng-container *ngIf="showType == 'default'">
+                <div class="page-header justify-content-between">
+                    <div class="page-heading">
+                        <div class="page-title">
+                            Invoices
+                        </div>
+                    </div>
+                    <div class="page-options">
+                        <div class="search-box">
+                            <span class="icon"><i class="far fa-search"></i></span>
+                            <input type="text" class="search-input" placeholder="Search Orders">
+                        </div>
+                        <div class="date-box">
+                            <p-calendar [(ngModel)]="value" [showIcon]="true"></p-calendar>
+                        </div>
+                        <div class="status-drop">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  ALL
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="page-heading-last">
+                        <button class="btn btn-create" (click)="openType('create')" ><i class="fas fa-plus-square"></i> Create</button>
                     </div>
                 </div>
-            </div>  
+                
+                <div class="pagination-block justify-content-between">
+                    <div class="pagination-block-left">
+                        <button type="" class="btn btn-export"><i class="fas fa-cloud-upload"></i> Export to Excel</button>
+                    </div>
+                    <div class="pagination-block-right d-flex">
+                        <div class="page-list">
+                            1 - 50 of 243
+                        </div>
+                        <div class="page-icons">
+                            <button class="btn btn-icon-only"><i class="far fa-chevron-left"></i></button>
+                            <button class="btn btn-icon-only"><i class="far fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="table-responsive">
+                    <table class="table table-scrolled">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Invoice No.
+                                </th>
+                                <th>
+                                    Buyer Name
+                                </th>
+                                <th>
+                                    Order Date
+                                </th>
+                                <th>
+                                    Delivery Date
+                                </th>
+                                <th>
+                                    MOP
+                                </th>
+                                <th>
+                                    Amount
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of orderList">
+                                <td>
+                                    {{item.invoiceNo}}
+                                </td>
+                                <td>
+                                    {{item.manufac}}
+                                </td>
+                                <td>
+                                    {{item.orderDate}}
+                                </td>
+                                <td>
+                                    {{item.delvDare}}
+                                </td>
+                                <td>
+                                    {{item.mop}}
+                                </td>
+                                <td>
+                                    {{item.amount}}
+                                </td>
+                            </tr>
+                        </tbody>
+    
+                    </table>
+    
+    
+                </div>
+            </ng-container>
+            
+            <ng-container *ngIf="showType == 'create'">
+
+                <div class="page-header">
+                    <div class="page-heading">
+                        <div class="page-title inner-page">
+                            Invoices <span class="icon"><i class="far fa-chevron-right"></i></span><span class="text">Create</span>
+                        </div>
+                    </div>
+                    <div class="page-options">
+                        <div class="button-box">
+                            <button type="" class="btn btn-export"><i class="fas fa-file-times"></i> Revoke</button>
+                        </div>
+                        <div class="button-box">
+                            <button type="" class="btn btn-export"><i class="fas fa-cloud-upload"></i> Export</button>
+                        </div>
+                        <div class="button-box">
+                            <button class="btn btn-create" (click)="openType('default')" ><i class="fas fa-check-square"></i> Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="invoice-card">
+                    <div class="invoice-card-body">
+                        <div class="invoice-text-title">
+                            Buyer Info
+                        </div>
+                        <div class="invoice-form">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Buyer Name</label>
+                                        <input type="" class="form-control form-xl " placeholder="Enter name." name="" value="">
+                                    </div> 
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">GST</label>
+                                        <input type="" class="form-control form-xl" placeholder="Enter gst." name="" value="">
+                                    </div> 
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">State Name/Code</label>
+                                        <input type="" class="form-control form-xl" placeholder="Enter gst." name="" value="">
+                                    </div> 
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Delivery Date</label>
+                                                <div class="date-box">
+                                                    <p-calendar [(ngModel)]="value" [showIcon]="true"></p-calendar>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Payment Mode</label>
+                                                <div class="status-drop">
+                                                    <div class="dropdown">
+                                                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Another action
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                          <a class="dropdown-item" href="#">Action</a>
+                                                          <a class="dropdown-item" href="#">Another action</a>
+                                                          <a class="dropdown-item" href="#">Something else here</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Dispatch ID</label>
+                                        <div class="org-dropdown for-dispatch">
+                                            <div class="dropdown">
+                                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="text">Select Dispatch</span>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">Royal Water Pvt. LTd.</a>
+                                                    <a class="dropdown-item" href="#">Royal Iron Pvt. LTd.</a>
+                                                    <a class="dropdown-item" href="#">Royal Pvt. LTd.</a>
+                                                </div>
+                                                </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Notes</label>
+                                        <input type="text" class="form-control form-xl"  name="" value="">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-invoices">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl. No.    
+                                </th>
+                                <th>
+                                    Products
+                                </th>
+                                <th>
+                                    HSN/SAC 
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Rate
+                                </th>
+                                <th>
+                                    Amount
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="serial">01</span>    
+                                </td>
+                                <td>
+                                    <div class="table-dropdown">
+                                        <div class="dropdown">
+                                            <button class="btn btn-org dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="text">Select Products</span>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Royal Water Pvt. LTd.</a>
+                                                <a class="dropdown-item" href="#">Royal Iron Pvt. LTd.</a>
+                                                <a class="dropdown-item" href="#">Royal Pvt. LTd.</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control table-control"  name="" placeholder="Enter Value">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control table-control"  name="" placeholder="Enter Value">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control table-control"  name="" placeholder="Percentage">
+                                </td>
+                                <td>
+                                    <i class="far fa-rupee-sign"></i> 00
+                                </td>
+                            </tr>
+                            <tr >
+                                <td colspan="6"> <button class="btn btn-create for-table" (click)="openType('create')" ><i class="fas fa-plus-square"></i> Add Field</button> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </ng-container>
+            
         </div>
 </div>
